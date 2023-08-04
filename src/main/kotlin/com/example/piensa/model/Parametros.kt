@@ -10,7 +10,6 @@ class Parametros {
     @Id
     @Column(updatable = false)
     var id: Long? =null
-    @NotBlank(message="Obligatorio")
     var inatencion: Long? = null
     var inatencion2: Long? = null
     var hiperactividad: Long? = null

@@ -20,4 +20,6 @@ class Alumnos {
     @Email(message= "Formato incorrecto")
     @NotBlank(message="Obligatorio")
     var email: String? = null
+    @NotBlank
+    var imagen: String? = null
 }

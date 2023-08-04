@@ -17,4 +17,6 @@ class Materia {
     @NotBlank
     @Column(name="curso_id")
     var cursoId: Long? = null
+    @NotBlank
+    var imagen: String? = null
 }

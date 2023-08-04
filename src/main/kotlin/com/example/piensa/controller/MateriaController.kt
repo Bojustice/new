@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.*
 import javax.validation.Valid
 
 @RestController
+
 @RequestMapping("/materia")
+@CrossOrigin(methods = [RequestMethod.GET, RequestMethod.POST, RequestMethod.PATCH, RequestMethod.PUT, RequestMethod.DELETE])
 class MateriaController {
     @Autowired
     lateinit var materiaService: MateriaService

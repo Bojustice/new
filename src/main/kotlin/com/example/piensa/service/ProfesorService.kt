@@ -20,7 +20,13 @@ class ProfesorService {
     }
 
     fun save(profesor:Profesor): Profesor {
+        try{
         return profesorRepository.save(profesor)
+    }
+        catch (ex:Exception){
+            throw ResponseStatusException(HttpStatus.NOT_FOUND,ex.message)
+
+        }
     }
 
     fun update(profesor:Profesor):Profesor{
@@ -41,4 +47,27 @@ class ProfesorService {
                 .withMatcher(("field"), ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
         return profesorRepository.findAll(Example.of(profesor, matcher), pageable)
     }
+
+    fun updateNombres(profesor: Profesor): Profesor {
+        try{
+            val response = profesorRepository.findById(profesor.id)
+                ?: throw Exception("ID no existe")
+            response.apply {
+                nombres=profesor.nombres
+            }
+            return profesorRepository.save(response)
+        }
+        catch (ex:Exception){
+            throw ResponseStatusException(HttpStatus.NOT_FOUND,ex.message)
+        }
+    }
+
+    fun delete (id: Long?):Boolean?{
+        profesorRepository.findById(id) ?:
+        throw  Exception()
+        profesorRepository.deleteById(id!!)
+        return true
+    }
+
+
 }

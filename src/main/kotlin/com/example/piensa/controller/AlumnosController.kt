@@ -10,7 +10,9 @@ import javax.validation.Valid
 
 
 @RestController
+
 @RequestMapping("/alumnos")
+@CrossOrigin(methods = [RequestMethod.GET, RequestMethod.POST, RequestMethod.PATCH, RequestMethod.PUT, RequestMethod.DELETE])
 class AlumnosController {
     @Autowired
     lateinit var alumnosService: AlumnosService
