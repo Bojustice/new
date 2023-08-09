@@ -4,7 +4,7 @@ import jakarta.persistence.*
 import javax.validation.constraints.NotBlank
 
 @Entity
-@Table
+@Table(name="Parametros")
 class Parametros {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

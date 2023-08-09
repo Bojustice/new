@@ -5,7 +5,7 @@ import javax.validation.constraints.Email
 import javax.validation.constraints.NotBlank
 
 @Entity
-@Table
+@Table(name="Alumnos")
 class Alumnos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

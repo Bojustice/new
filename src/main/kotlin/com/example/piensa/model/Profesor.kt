@@ -10,8 +10,8 @@ import javax.validation.constraints.NotBlank
 
 
 @Entity
-@Table
-class   Profesor {
+@Table(name="Profesor")
+class Profesor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(updatable = false)

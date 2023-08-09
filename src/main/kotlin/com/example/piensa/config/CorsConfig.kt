@@ -1,5 +1,6 @@
 package com.example.piensa.config
 
+
 import org.springframework.context.annotation.Bean
 import org.springframework.web.cors.CorsConfiguration
 import org.springframework.web.cors.reactive.CorsConfigurationSource
@@ -17,8 +18,7 @@ class CorsConfig {
         )
         configuration.allowCredentials = true
         configuration.allowedHeaders = listOf("*")
-        configuration.exposedHeaders =
-            listOf("X-Auth-Token", "Authorization", "Access-Control-Allow-Origin", "Access-Control-Allow-Credentials")
+        configuration.exposedHeaders = listOf("X-Auth-Token", "Authorization", "Access-Control-Allow-Origin", "Access-Control-Allow-Credentials")
         val source = UrlBasedCorsConfigurationSource()
         source.registerCorsConfiguration("/**", configuration)
         return source
